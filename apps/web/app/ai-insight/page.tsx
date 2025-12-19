@@ -1,20 +1,11 @@
 "use client";
 
 import Sidebar from "@/components/Sidebar";
-import AITerminal from "@/components/AITerminal";
+import AIChatBot from "@/components/AIChatBot";
 import AdviceCard from "@/components/AdviceCard";
 import GlassCard from "@/components/GlassCard";
 import { Brain, Sparkles, TrendingUp, ShieldAlert, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
-
-const AI_SUMMARY = `[STRATEGY_ANALYSIS_IN_PROGRESS...]
-> Current Node Coverage: 98.2% (Historical Max)
-> Latency Variance (Global): ±12ms
-> Encryption Integrity: AES-256 Verified.
-
-Summary: Your orbital network is performing at peak efficiency, however, I've detected a significant bandwidth bottleneck in the South Atlantic cluster between 02:00 and 04:00 UTC. CPU thermals are rising on Edge-Node-7.
-
-Recommendation: Transition to "Quantum-RSA" for session handshakes to preemptively address the rising node density in Asian-Pacific sectors.`;
 
 export default function AIInsightPage() {
     return (
@@ -42,9 +33,9 @@ export default function AIInsightPage() {
 
                     <div className="grid grid-cols-12 gap-8 flex-1 min-h-0 pb-8">
 
-                        {/* Left: Terminal */}
+                        {/* Left: ChatBot */}
                         <div className="col-span-12 lg:col-span-7 flex flex-col gap-6">
-                            <AITerminal text={AI_SUMMARY} />
+                            <AIChatBot />
 
                             <div className="grid grid-cols-3 gap-6 shrink-0">
                                 {[
