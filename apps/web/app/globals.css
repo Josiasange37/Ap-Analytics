@@ -1,0 +1,117 @@
+/* Import Google Fonts - MUST BE FIRST */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* SHARED TOKENS */
+  --font-display: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "Fira Code", monospace;
+
+  /* LIGHT PALETTE (Comfort) */
+  --bg-page-light: #f8fafc;
+  /* Cool White / Slate 50 */
+  --bg-panel-light: rgba(255, 255, 255, 0.85);
+  --bg-float-light: rgba(255, 255, 255, 0.7);
+  --text-main-light: #1e293b;
+  /* Slate 800 */
+  --text-muted-light: #64748b;
+  /* Slate 500 */
+  --border-light: rgba(148, 163, 184, 0.25);
+  --accent-light: #4f7cff;
+  /* Electric Blue */
+
+  /* DARK PALETTE (Luminous) */
+  --bg-page-dark: #020617;
+  /* Slate 950 */
+  --bg-panel-dark: rgba(15, 23, 42, 0.6);
+  --bg-float-dark: rgba(2, 6, 23, 0.8);
+  --text-main-dark: #f8fafc;
+  /* Slate 50 */
+  --text-muted-dark: #94a3b8;
+  /* Slate 400 */
+  --border-dark: rgba(255, 255, 255, 0.08);
+  --accent-dark: #6366f1;
+  /* Indigo 500 */
+}
+
+/* 
+ * THEME VARIABLE MAPPING 
+ */
+:root {
+  /* Default to LIGHT */
+  --bg-page: var(--bg-page-light);
+  --bg-panel: var(--bg-panel-light);
+  --bg-float: var(--bg-float-light);
+  --text-main: var(--text-main-light);
+  --text-muted: var(--text-muted-light);
+  --border-color: var(--border-light);
+  --accent-color: var(--accent-light);
+  --shadow-panel: 0 4px 20px -2px rgba(148, 163, 184, 0.15);
+}
+
+:root.dark {
+  /* Switch to DARK */
+  --bg-page: var(--bg-page-dark);
+  --bg-panel: var(--bg-panel-dark);
+  --bg-float: var(--bg-float-dark);
+  --text-main: var(--text-main-dark);
+  --text-muted: var(--text-muted-dark);
+  --border-color: var(--border-dark);
+  --accent-color: var(--accent-dark);
+  --shadow-panel: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-display);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.5s cubic-bezier(0.2, 0, 0, 1), color 0.5s ease;
+}
+
+/* 
+ * GLASS UTILITIES
+ */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  box-shadow: var(--shadow-panel);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-color);
+}
+
+/* 
+ * SCROLLBAR
+ */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
