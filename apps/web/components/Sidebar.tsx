@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LayoutDashboard, MapPin, BarChart3, Settings, Sparkles } from "lucide-react";
+import { LayoutDashboard, MapPin, BarChart3, Settings, Sparkles, Brain } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,7 @@ const NAV_ITEMS = [
     { icon: LayoutDashboard, label: "Mission Control", href: "/" },
     { icon: MapPin, label: "Sat-Link", href: "/sat-link" },
     { icon: BarChart3, label: "Telemetry", href: "/telemetry" },
+    { icon: Brain, label: "AI Insight", href: "/ai-insight" },
     { icon: Settings, label: "System", href: "/settings" },
 ];
 
